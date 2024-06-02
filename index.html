@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Revealing Vision-Language Integration in the Brain with Multimodal Networks">
+  <meta name="keywords" content="Multimodal, Neuroscience">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Revealing Vision-Language Integration in the Brain with Multimodal Networks</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Revealing Vision-Language Integration in the Brain with Multimodal Networks</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="">Vighnesh Subramaniam</a><sup>1,2</sup>,</span>
+            <span class="author-block">
+              <a href="https://colinconwell.github.io/">Colin Conwell</a><sup>3</sup>,</span>
+            <span class="author-block">
+              <a href="https://czlwang.github.io/">Christopher Wang</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://klab.tch.harvard.edu/">Gabriel Kreiman</a><sup>4</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://people.csail.mit.edu/boris/boris.html">Boris Katz</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://stanford.edu/~cases/">Ignacio Cases</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://0xab.com/">Andrei Barbu</a><sup>1,2</sup>
+            </span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>MIT CSAIL,</span>
+            <span class="author-block"><sup>2</sup>CBMM,</span>
+            <span class="author-block"><sup>3</sup>Department of Pscyhology, Harvard University,</span>
+            <span class="author-block"><sup>4</sup>Boston Children’s Hospital, Harvard Medical School</span>
+          </div> 
+
+          <div class="is-size-3 publication-authors">
+            <span class="author-block">ICML 2024</span>
+          </div> 
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+              	<a href="https://github.com/vsubramaniam851/brain-multimodal-integration" 
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+              	</a>  
+              </span>
+            
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+          We use multimodal deep neural networks to identify sites of multimodal integration in the human brain and investigate how well these networks model integration in the brain. Sites of multimodal integration are regions where a multimodal language-vision model is better at predicting neural recordings (stereoelectroencephalography, SEEG) than either a unimodal language, unimodal vision, or a linearly-integrated language-vision model. We use a range of state-of-the-art models spanning different architectures including Transformers and CNNs with different multimodal integration approaches to model the SEEG signal while subjects watched movies. As a key enabling step, we first demonstrate that the approach has the resolution to distinguish trained from randomly-initialized models for both language and vision; the inability to do so would fundamentally hinder further analysis. We show that trained models systematically outperform randomly initialized models in their ability to predict the SEEG signal. We then compare unimodal and multimodal models against one another. Since models all have different architectures, number of parameters, and training sets which can obscure the results, we then carry out a test between two controlled models: SLIP-Combo and SLIP-SimCLR which keep all of these attributes the same aside from multimodal input. Our first key contribution identifies neural sites (on average 141 out of 1090 total sites or 12.94%) and brain regions where multimodal integration is occurring. Our second key contribution finds that CLIP-style training is best suited for modeling multimodal integration in the brain when analyzing different methods of multimodal integration and how they model the brain.
+          </p>
+          <hr>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+        <figure>
+            <img src="./static/figures/methods_v4.png" />
+            <figcaption style="font-size: 0.8em;"></figcaption>
+        </figure>
+    	<div class="content has-text-justified">
+        <p><b>Multimodal Integration in the Brain Overview.</b> (a) We parse the stimuli, movies, into image-text pairs (which we call event structures) and process these with either a vision model, text model, or multimodal model. We extract feature vectors from these models and predict neural activity in 161 25ms time bins per electrode, obtaining a Pearson correlation coefficient per time bin per electrode per model. We run this regression using both trained and randomly initialized encoders and for two datasets, a vision-aligned dataset and language-aligned dataset, which differ in the methods to sample these pairs. (b) We design a bootstrapping test over input image-text pairs to build 95% confidence intervals on scores per time bin per electrode. We filter out time bins in electrodes where the validation lower confidence interval is less than zero. (c) The first analysis of this data investigates if trained models outperform randomly initialized models. The second analysis investigates if multimodal models outperform unimodal models. The third analysis repeats the second holding constant the architecture and dataset to factor out these confounds. Two other analyses are described in the text. The fourth analysis investigates if multimodal models outperform models that concatenate language and vision features.</p>
+        <hr>
+    </div>
+    </div>
+</div>
+</section>
+
+<section class="section" style="margin-top: -5px;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+	<h3 class="title is-4">Data Overview</h3>
+    </div>
+   </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+        <figure>
+            <img src="./static/figures/data_overview.png" />
+            <figcaption style="font-size: 0.8em;"></figcaption>
+        </figure>
+        <div class="content has-text-justified">
+          <p><b>Data Overview</b> Our dataset consists of stereoelectroencephalography recordings while subjects watch movies. (a) The electrode placements over all subjects. Each yellow dot denotes an electrode collecting invasive field
+            potential recordings for further analysis in our experiments. (b) An overview of our data collection procedure. Subjects are presented
+            feature length films while neural data is collected from these electrodes in the brain.</p>
+          <hr>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="margin-top: -5px;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+	<h3 class="title is-4">Multimodal Integration Sites</h3>
+    </div>
+   </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+        <figure>
+            <img src="./static/figures/mult_uni_brains.png" />
+            <figcaption style="font-size: 0.8em;"></figcaption>
+        </figure>
+        <div class="content has-text-justified">
+          <p><b>Multimodal Integration Sites.</b> We visualize our identified sites of multimodal integration accordings to 5 tests of multimodality. Multimodal sites aggregated into regions from the DKT atlas. For each site we compute the percentage of multimodal electrodes using the first test and the (left) language or (right) vision alignment. The top defines a site to be multimodal if the best model that explains that electrode is multimodal as opposed to unimodal. The bottom controls for architecture, parameters, and datasets by comparing SLIP-Combo and SLIP-SimCLR. Red regions have no multimodal electrodes. Regions which have at least one electrode that is multimodal both with the vision and language aligned stimuli are marked with a blue star. We notice that many electrodes occur in the temporoparietal junction with a cluster in the superior temporal cortex, middle temporal cortex, inferior parietal lobe, etc. Other areas we identify include the insula, supramarginal cortex, the superior frontal cortex, and the caudal middle frontal cortex.</p>
+          <hr>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="margin-top: -5px;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+	<h3 class="title is-4">Best Multimodal Integration Model</h3>
+    </div>
+   </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+        <figure>
+            <img src="./static/figures/best_multi_model.png" />
+            <figcaption style="font-size: 0.8em;"></figcaption>
+        </figure>
+        <div class="content has-text-justified">
+          <p><b>Best model of multimodal integration.</b> We visualize the individual electrodes that pass our multimodality tests for the language-aligned (top) and vision-aligned datasets (bottom), adding a bold outline to electrodes that pass across both datasets. We color the electrodes by the top-ranked multimodal model that predicts activity in the electrode. We see that models such as SLIP-Combo and SLIP-CLIP often predict activity the best across datasets. We also see that BLIP and Flava are the best architecturally multimodal models.</p>
+          <hr>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="margin-top: -5px;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+	<h3 class="title is-4">Trained vs Randomly Initialized Models</h3>
+    </div>
+   </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+        <figure>
+            <img src="./static/figures/trained_random_violin.png" />
+            <figcaption style="font-size: 0.8em;"></figcaption>
+        </figure>
+        <div class="content has-text-justified">
+          <p><b>Trained models beat randomly initialized models.</b> A comparison between pretrained and randomly initialized model performance showing the distribution of predictivity across electrodes. This averages significant time bins per electrode, i.e., the lower validation confidence interval must be larger than zero, for both vision and language alignments for our 12 models. Every trained network outperforms its randomly initialized counterpart. Trained networks overall outperform untrained networks. This is true both on average, and for almost every single electrode.</p>
+          <hr>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{subramaniam2024revealing,
+      title={Revealing Vision-Language Integration in the Brain Using Multimodal Networks},
+      author={Subramaniam, Vighnesh and Conwell, Colin and Wang, Christopher and Kreiman, Gabriel and Katz, Boris and Cases, Ignacio and Barbu, Andrei},
+      booktitle={Fourty-first International Conference on Machine Learning},
+      year={2024}
+    }
+    </code></pre>
+  </div>
+</section>
+
+	
+<footer class="footer">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content" style="text-align: center;">
+          <p>
+            This website is adapted from the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies template</a>, which you are free to borrow if you link back to it in the footer.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+	
+
+
+</body>
+</html>
