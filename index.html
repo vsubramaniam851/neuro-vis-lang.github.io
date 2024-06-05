@@ -58,7 +58,7 @@
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>MIT CSAIL,</span>
             <span class="author-block"><sup>2</sup>CBMM,</span>
-            <span class="author-block"><sup>3</sup>Department of Pscyhology, Harvard University,</span>
+            <span class="author-block"><sup>3</sup>Department of Cognitive Science, Johns Hopkins University,</span>
             <span class="author-block"><sup>4</sup>Boston Children’s Hospital, Harvard Medical School</span>
           </div> 
 
@@ -80,7 +80,7 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-              	<a href="https://github.com/vsubramaniam851/brain-multimodal-integration" 
+              	<a href="https://github.com/vsubramaniam851/brain-multimodal" 
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -106,8 +106,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-          We use multimodal deep neural networks to identify sites of multimodal integration in the human brain and investigate how well these networks model integration in the brain. Sites of multimodal integration are regions where a multimodal language-vision model is better at predicting neural recordings (stereoelectroencephalography, SEEG) than either a unimodal language, unimodal vision, or a linearly-integrated language-vision model. We use a range of state-of-the-art models spanning different architectures including Transformers and CNNs with different multimodal integration approaches to model the SEEG signal while subjects watched movies. As a key enabling step, we first demonstrate that the approach has the resolution to distinguish trained from randomly-initialized models for both language and vision; the inability to do so would fundamentally hinder further analysis. We show that trained models systematically outperform randomly initialized models in their ability to predict the SEEG signal. We then compare unimodal and multimodal models against one another. Since models all have different architectures, number of parameters, and training sets which can obscure the results, we then carry out a test between two controlled models: SLIP-Combo and SLIP-SimCLR which keep all of these attributes the same aside from multimodal input. Our first key contribution identifies neural sites (on average 141 out of 1090 total sites or 12.94%) and brain regions where multimodal integration is occurring. Our second key contribution finds that CLIP-style training is best suited for modeling multimodal integration in the brain when analyzing different methods of multimodal integration and how they model the brain.
-          </p>
+            We use (multi)modal deep neural networks (DNNs) to probe for sites of multimodal integration in the human brain by predicting stereoencephalography (SEEG) recordings taken while human subjects watched movies.  We operationalize sites of multimodal integration as regions where a multimodal vision-language model predicts recordings better than unimodal language, unimodal vision, or linearly-integrated language-vision models. Our target DNN models span different architectures (e.g., convolutional networks and transformers) and multimodal training techniques (e.g., cross-attention and contrastive learning). As a key enabling step, we first demonstrate that trained vision and language models systematically outperform their randomly initialized counterparts in their ability to predict SEEG signals. We then compare unimodal and multimodal models against one another. Because our target DNN models often have different architectures, number of parameters, and training sets (possibly obscuring those differences attributable to integration), we carry out a controlled comparison of two models (SLIP and SimCLR), which keep all of these attributes the same aside from input modality. Using this approach, we identify a sizable number of neural sites (on average 141 out of 1090 total sites or 12.94%) and brain regions where multimodal integration seems to occur. Additionally, we find that among the variants of multimodal training techniques we assess, CLIP-style training is the best suited for downstream prediction of the neural activity in these sites.</p>
           <hr>
         </div>
       </div>
@@ -120,11 +119,11 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
         <figure>
-            <img src="./static/figures/methods_v4.png" />
+            <img src="./static/figures/new_overview.png" />
             <figcaption style="font-size: 0.8em;"></figcaption>
         </figure>
     	<div class="content has-text-justified">
-        <p><b>Multimodal Integration in the Brain Overview.</b> (a) We parse the stimuli, movies, into image-text pairs (which we call event structures) and process these with either a vision model, text model, or multimodal model. We extract feature vectors from these models and predict neural activity in 161 25ms time bins per electrode, obtaining a Pearson correlation coefficient per time bin per electrode per model. We run this regression using both trained and randomly initialized encoders and for two datasets, a vision-aligned dataset and language-aligned dataset, which differ in the methods to sample these pairs. (b) We design a bootstrapping test over input image-text pairs to build 95% confidence intervals on scores per time bin per electrode. We filter out time bins in electrodes where the validation lower confidence interval is less than zero. (c) The first analysis of this data investigates if trained models outperform randomly initialized models. The second analysis investigates if multimodal models outperform unimodal models. The third analysis repeats the second holding constant the architecture and dataset to factor out these confounds. Two other analyses are described in the text. The fourth analysis investigates if multimodal models outperform models that concatenate language and vision features.</p>
+        <p><b>Multimodal Integration in the Brain Overview.</b> (A) We parse the stimuli, movies, into image-text pairs (which we call \emph{event structures}) and process these with either a vision model, text model, or multimodal model. We extract feature vectors from these models and predict neural activity in 161 25ms time bins per electrode, obtaining a Pearson correlation coefficient per time bin per electrode per model. We exclude any time bins in which a bootstrapping test (computed over event structures) suggests an absence of meaningful signal in the neural activity target in that bin. We run these regressions using both trained and randomly initialized encoders and for two datasets, a vision-aligned dataset and language-aligned dataset, which differ in the methods to sample these pairs. (B) The first analysis of this data investigates if trained models outperform randomly initialized models. The second analysis investigates if multimodal models outperform unimodal models. The third analysis repeats the second holding constant the architecture and dataset to factor out these confounds. A final analysis investigates if multimodal models that meaningfully integrate vision and language features outperform models that simply concatenate them.</p>
         <hr>
     </div>
     </div>
@@ -218,7 +217,7 @@
             <figcaption style="font-size: 0.8em;"></figcaption>
         </figure>
         <div class="content has-text-justified">
-          <p><b>Trained models beat randomly initialized models.</b> A comparison between pretrained and randomly initialized model performance showing the distribution of predictivity across electrodes. This averages significant time bins per electrode, i.e., the lower validation confidence interval must be larger than zero, for both vision and language alignments for our 12 models. Every trained network outperforms its randomly initialized counterpart. Trained networks overall outperform untrained networks. This is true both on average, and for almost every single electrode.</p>
+          <p><b>Trained models beat randomly initialized models.</b> A comparison between pretrained and randomly initialized model performance showing the distribution of predictivity across electrodes. This averages significant time bins per electrode (where the lower validation confidence interval must be greater than zero), for both datasets alignments and for each of our 12 models. Every trained network outperforms its randomly initialized counterpart. Trained networks overall outperform untrained networks. This is true both on average, and for almost every single electrode.</p>
           <hr>
       </div>
     </div>
